@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32210.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArchSE.Gateway", "ArchSE.Gateway\ArchSE.Gateway.csproj", "{D6C0FC39-1297-4BE4-86EE-26578FF54DEB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D6C0FC39-1297-4BE4-86EE-26578FF54DEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6C0FC39-1297-4BE4-86EE-26578FF54DEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6C0FC39-1297-4BE4-86EE-26578FF54DEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6C0FC39-1297-4BE4-86EE-26578FF54DEB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F89DBA65-1193-4D2D-AD2C-866BEB27D852}
+	EndGlobalSection
+EndGlobal

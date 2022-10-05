@@ -1,0 +1,18 @@
+﻿{
+  "Routes": [
+    {
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "<IP>",
+          "Port": 8090
+        }
+      ],
+      "DownstreamPathTemplate": "/WeatherForecast",
+      "DownstreamScheme": "http",
+      "ServiceName": "WebApplication1",
+      "SwaggerKey": "WebApplication1",
+      "UpstreamHttpMethod": [ "Get" ],
+      "UpstreamPathTemplate": "/tempo/WeatherForecast"
+    }
+  ]
+}

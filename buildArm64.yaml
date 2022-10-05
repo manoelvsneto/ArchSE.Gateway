@@ -1,0 +1,50 @@
+pool:
+  name: Arm64
+  vmImage: 'ubuntu-20.04'
+
+trigger:
+- master
+resources:
+- repo: self
+variables:
+  imagePullSecret: 'regcred'
+stages:
+- stage: Build
+  displayName: Build stage
+  jobs:
+  - job: Build
+    displayName: Build
+    steps:
+    - task: Docker@2
+      inputs:
+        containerRegistry: 'DockerConnection'
+        repository: 'manoelvsneto/archsegateway'
+        command: 'buildAndPush'
+        tags: '$(Build.BuildId)'
+        Dockerfile: '$(Build.SourcesDirectory)/ArchSE.Gateway/DockerfileArm64'
+
+    - task: KubernetesManifest@0
+      displayName: Create imagePullSecret
+      inputs:
+        kubernetesServiceConnection: K8SOracleCloud
+        action: createSecret
+        secretName: $(imagePullSecret)
+        dockerRegistryEndpoint: 'DockerConnection'
+    
+    - task: PublishPipelineArtifact@1
+      displayName: Publish Report
+      inputs:
+        artifact: '_ArchSE.Gateway'
+        publishLocation: 'pipeline'
+    
+    - task: KubernetesManifest@0
+      displayName: Deploy to Kubernetes cluster
+      inputs:
+        kubernetesServiceConnection: K8SOracleCloud
+        action: deploy
+        manifests: |
+          $(Build.SourcesDirectory)/ArchSE.Gateway/deployment.yaml
+          $(Build.SourcesDirectory)/ArchSE.Gateway/service.yaml
+        imagePullSecrets: |
+          $(imagePullSecret)
+        containers: 'manoelvsneto/archsegateway:$(Build.BuildId)'

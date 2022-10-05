@@ -1,0 +1,13 @@
+﻿apiVersion: v1
+kind: Service
+metadata:
+  name: archsegateway-service
+spec:
+  selector:
+    app: archsegateway
+  type: LoadBalancer
+  ports:
+    - name: archsegateway-port
+      port: 8099
+      targetPort: 8099
+      nodePort: 32249

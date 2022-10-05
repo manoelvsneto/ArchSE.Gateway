@@ -1,0 +1,17 @@
+﻿{
+  "SwaggerEndPoints": [
+    {
+      "Key": "WebApplication1",
+      "Config": [
+        {
+          "Name": "WebApplication1 API",
+          "Version": "v1",
+          "Service": {
+            "Name": "WebApplication1",
+            "Path": "/swagger/v1/swagger.json"
+          }
+        }
+      ]
+    }
+  ]
+}

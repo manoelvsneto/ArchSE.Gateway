@@ -1,0 +1,20 @@
+﻿/*
+
+ ‎O ‎‎UpstreamPathTemplate‎‎ define a URL do Portal de API que recebe as solicitações e, em seguida, redireciona para a API de microsserviço (DownstreamPathTemplate).‎
+
+‎O ‎‎UpstreamHttpMethod‎‎ define os métodos HTTP (Get, Put, Post, Patch ...) que o Portal da API usa para distinguir entre as solicitações.‎
+
+‎O ‎‎DownstreamPathTemplate‎‎ representa o ponto final no microsserviço que receberá a solicitação. Em outras palavras, ele pega a solicitação do UpstreamPathTemplate e redireciona para o DownstreamPathTemplate.‎
+
+‎O ‎‎DownstreamScheme‎‎ representa o protocolo para se comunicar com o microsserviço. ‎
+
+‎O ‎‎DownstreamHostAndPorts‎‎ define a URL e a porta dos microsserviços que receberão as solicitações.‎
+  */
+{
+  "GlobalConfiguration": {
+    "ServiceDiscoveryProvider": {
+      "Type": "AppConfiguration",
+      "PollingIntervalSeconds": 10000
+    }
+  }
+}

@@ -1,0 +1,7 @@
+﻿{
+  "Services": {
+    "WebApplication1": {
+      "DownstreamPath": "http://<IP>:8090"
+    }
+  }
+}

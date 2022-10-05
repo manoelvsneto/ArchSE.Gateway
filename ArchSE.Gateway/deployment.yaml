@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: manoelvsnetoarchsegateway-deployment
+  labels:
+    app: archsegateway
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: archsegateway
+  template:
+    metadata:
+      labels:
+        app: archsegateway
+    spec:
+      containers:
+      - name:  manoelvsnetoarchsegateway
+        image:  manoelvsneto/archsegateway
+        ports:
+        - containerPort: 8090
+
+
